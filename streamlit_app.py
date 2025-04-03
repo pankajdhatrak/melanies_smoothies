@@ -15,7 +15,12 @@ cnx=st.connection("snowflake")
 session=cnx.session()
 #session = get_active_session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col("FRUIT_NAME"))
-st.dataframe(data=my_dataframe, use_container_width=True)
+#st.dataframe(data=my_dataframe, use_container_width=True)
+#st.stop()
+
+#convert the snowpark  data frame to pandas
+pd_df=my_dataframe.to_padas()
+st.dataframe(pd_df)
 st.stop()
 
 ingredient_list = st.multiselect(
