@@ -20,7 +20,7 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col("FRUIT
 #st.stop()
 
 #convert the snowpark  data frame to pandas
-pd_df=my_dataframe.to_padas()
+pd_df=my_dataframe.to_pandas()
 st.dataframe(pd_df)
 st.stop()
 
